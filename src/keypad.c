@@ -10,7 +10,7 @@ void keypad_setup(struct keypad *keypad, int pins[]) {
 	ASSERTDO((pins != NULL), print_error("keypad_setup: pins is null.\n"); return);
 
 	for (int i = 0; i < N_PINS; ++i) {
-		ASSERTDO((rows[i] >= 0), print_error("keypad_setup: pins[%d] cannot be under zero.\n", i); return);
+		ASSERTDO((pins[i] >= 0), print_error("keypad_setup: pins[%d] cannot be under zero.\n", i); return);
 	}
 
 	/* initialize */
@@ -28,7 +28,7 @@ void keypad_setup(struct keypad *keypad, int pins[]) {
 	gpio_setup();
 
 	// Newly added
-	pinv_mode(keypad->pins, N_PIN, PGPIO_INPUT_PULLUP);
+	pinv_mode(keypad->pins, N_PINS, PGPIO_INPUT_PULLUP);
 
 	keypad->initialized = true;
 }
