@@ -48,9 +48,12 @@ int main(int argc, char *const argv[]) {
   */
 void setup() {
 	/* temporary things */
-	int rows[] = { KEYPAD_0, KEYPAD_1, KEYPAD_2, KEYPAD_3 }; /* machine_specific */
-	int cols[] = { KEYPAD_4, KEYPAD_5, KEYPAD_6, KEYPAD_7 };
-	
+	int keypad_pins[] = { 
+		KEY0, KEY1, KEY2, KEY3, KEY4,
+		KEY5, KEY6, KEY7, KEY8, KEY9,
+		KEYADD, KEYSUB, KEYEQ
+	};
+
 	int data_pins[] = { CLCD_D4, CLCD_D5, CLCD_D6, CLCD_D7 };
 	int reg_pin = CLCD_RS;
 	int en_pin = CLCD_EN;
@@ -60,7 +63,7 @@ void setup() {
 	mycalc = (struct calc *)malloc(sizeof(struct calc) + 1);
 	myclcd = (struct clcd *)malloc(sizeof(struct clcd) + 1);
 
-	keypad_setup(mykeypad, rows, 4, cols, 4);
+	keypad_setup(mykeypad, keypad_pins);
 	keypad_set_listener(mykeypad, on_key_pressed);
 	
 	clcd_setup(myclcd, data_pins, reg_pin, en_pin);
