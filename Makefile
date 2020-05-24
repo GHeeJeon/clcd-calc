@@ -6,7 +6,7 @@ TARGET_INITIAL	:= calc
 TARGET		:= $(TARGET_INITIAL)
 
 CC		:= gcc
-CFLAGS		:= -Wall -std=gnu99
+CFLAGS		:= -Wall -std=c99
 LIB		:= -lwiringPi -lwiringPiDev -lm -lpthread -lrt -lcrypt
 
 TARGET_DIR	:= bin
