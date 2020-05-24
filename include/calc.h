@@ -34,7 +34,7 @@
 
 enum KEY {
 	NUM_0 		= KEY0,
-	NUM_1 		= KEYl,
+	NUM_1 		= KEY1,
 	NUM_2 		= KEY2,
 	NUM_3 		= KEY3,
 	NUM_4 		= KEY4,
