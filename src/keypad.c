@@ -46,7 +46,7 @@ int keypad_read(struct keypad *keypad) {
 	
 	for (int i = 0; i < N_PINS; ++i) {
 		if (digital_read(keypad->pins[i]) == 0) {
-			return i;
+			return keypad->pins[i];
 		}
 	}
 
