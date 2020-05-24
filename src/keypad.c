@@ -57,6 +57,8 @@ int keypad_read(struct keypad *keypad) {
 bool keypad_loop(struct keypad *keypad) {
 	ASSERTDO((keypad != NULL), print_error("keypad_loop: keypad is null.\n"); return false);
 
+	udelay(1000 * 10);
+
 	static bool pressed = false;
 
 	if (keypad->callback != NULL) {
