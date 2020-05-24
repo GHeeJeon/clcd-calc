@@ -1,18 +1,35 @@
 #ifndef _MACHINE_SPECIFIC_H
 #define _MACHINE_SPECIFIC_H
 
-/**
-  * Keypad connection.
-  */
-#define KEYPAD_0	13	/* R1 */
-#define KEYPAD_1	14	/* R2 */
-#define KEYPAD_2	6	/* R3 */
-#define KEYPAD_3	10	/* R4 */
-#define KEYPAD_4	21	/* C1 */
-#define KEYPAD_5	22	/* C2 */
-#define KEYPAD_6	23	/* C3 */
-#define KEYPAD_7	24	/* C4 */
+/*       Name   WiringPi   */
+#define H_MOSI   12
+#define H_MISO   13
+#define H_SCLK    14
+#define H_101   21
+#define H_100    22
+#define H_108    23
+#define H_97    24
+#define H_CE0    10
+#define H_118    11
+#define H_99    26
+#define H_98   27
+#define H_102   5
+#define H_103   6
 
+/*      button   Pin      */
+#define KEY1   H_MOSI
+#define KEY2   H_97
+#define KEY3   H_MISO
+#define KEY4   H_CE0
+#define KEY5   H_SCLK
+#define KEY6   H_118
+#define KEY7   H_101
+#define KEY8   H_99
+#define KEY9   H_100
+#define KEY0   H_98
+#define KEYEQ   H_108
+#define KEYADD   H_102
+#define KEYSUB   H_103
 
 /**
   * Keypad scan delay.

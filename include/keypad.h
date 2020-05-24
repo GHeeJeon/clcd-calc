@@ -17,34 +17,22 @@
 
 #include <stdbool.h>
 
-#define MAX_ROWS 4
-#define MAX_COLS 4
+#define N_PINS 13
 
 typedef void (*keypad_listener)(int);
 
 struct keypad {
 	bool initialized;
 
-	int rows[MAX_ROWS];
-	int n_rows;
-
-	int cols[MAX_COLS];
-	int n_cols;
+	int pins[N_PINS];
 
 	keypad_listener callback;	
 };
 
 /**
-  * Convert row and column point to key index.
-  */
-static inline int _point_to_index(int row, int col, int n_cols) {
-	return (row * n_cols) + col;
-}
-
-/**
   * Init and assign struct keypad.
   */
-void keypad_setup(struct keypad *keypad, int rows[], int n_rows, int cols[], int n_cols);
+void keypad_setup(struct keypad *keypad, int pins[]);
 
 /**
   * Set a callback launchec when input is available.

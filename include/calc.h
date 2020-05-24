@@ -23,6 +23,7 @@
 
 #include "clcd.h"
 #include "macros.h"
+#include "machine_specific.h"
 
 #define CALC_EXP_MAX 	64
 #define CALC_MAX_DIGITS	9
@@ -32,19 +33,19 @@
 #define CALC_RES	0x40
 
 enum KEY {
-	NUM_0 		= 13,
-	NUM_1 		= 8,
-	NUM_2 		= 9,
-	NUM_3 		= 10,
-	NUM_4 		= 4,
-	NUM_5 		= 5,
-	NUM_6 		= 6,
-	NUM_7 		= 0,
-	NUM_8 		= 1,
-	NUM_9 		= 2,
-	FUN_ADD 	= 11,
-	FUN_SUB 	= 7,
-	FUN_RES 	= 15
+	NUM_0 		= KEY0,
+	NUM_1 		= KEYl,
+	NUM_2 		= KEY2,
+	NUM_3 		= KEY3,
+	NUM_4 		= KEY4,
+	NUM_5 		= KEY5,
+	NUM_6 		= KEY6,
+	NUM_7 		= KEY7,
+	NUM_8 		= KEY8,
+	NUM_9 		= KEY9,
+	FUN_ADD 	= KEYADD,
+	FUN_SUB 	= KEYSUB,
+	FUN_RES 	= KEYEQ
 };
 
 struct exp {
