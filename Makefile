@@ -2,7 +2,7 @@
 
 # Makefile boilerplate version 0.1.0 (20190416)
 
-TARGET_INITIAL	:= display
+TARGET_INITIAL	:= calc
 TARGET		:= $(TARGET_INITIAL)
 
 CC		:= gcc
@@ -21,7 +21,7 @@ OBJ_EXT		:= o
 
 ################### ARGUMENTS ###################
 
-VERBOSE = 0
+VERBOSE = 1
 
 #################################################
 
